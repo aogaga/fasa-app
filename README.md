@@ -1,7 +1,7 @@
 # fasa-app
 # Spring Boot Application with Docker Compose
 
-This project is a Spring Boot application containerized using Docker and managed with Docker Compose. It allows for easy setup, deployment, and development.
+Fasa App Validation
 
 ---
 
