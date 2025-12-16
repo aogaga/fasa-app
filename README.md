@@ -37,7 +37,7 @@ description: "Application source code"
 
 1. **Running the application :**
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 2. **Accessing the application:**
 
