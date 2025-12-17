@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Household {
-    private int houseHoldCount;
+    private int numberInHousehold;
     private int numberInCollege;
 }

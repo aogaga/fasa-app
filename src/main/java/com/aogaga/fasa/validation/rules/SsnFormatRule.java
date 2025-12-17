@@ -17,7 +17,11 @@ public class SsnFormatRule implements FasaBaseRule {
 
     @Override
     public RuleResult apply(Application data) {
-        return data.getStudentInfo().getSsn().matches("\\\\d{9}")
+        String ssn = data.getStudentInfo().getSsn();
+        if (ssn == null) {
+            return fail(code(), "SSN is missing");
+        }
+        return ssn.matches("\\d{9}")  // match exactly 9 digits
                 ? pass(code())
                 : fail(code(), "Invalid SSN format");
     }

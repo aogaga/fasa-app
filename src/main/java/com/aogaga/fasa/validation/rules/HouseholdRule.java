@@ -17,7 +17,17 @@ public class HouseholdRule implements FasaBaseRule {
 
     @Override
     public RuleResult apply(Application d) {
-        return d.getHousehold().getNumberInCollege() <= d.getHousehold().getHouseHoldCount()
+        if (d.getHousehold() == null) {
+            return fail(code(), "Household information is missing");
+        }
+        Integer numberInCollege = d.getHousehold().getNumberInCollege();
+        Integer householdCount = d.getHousehold().getNumberInHousehold();
+
+        if (numberInCollege == null || householdCount == null) {
+            return fail(code(), "Household numbers are incomplete");
+        }
+
+        return numberInCollege <= householdCount
                 ? pass(code())
                 : fail(code(), "Number in college cannot exceed household size");
     }

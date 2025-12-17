@@ -18,7 +18,7 @@ public class AppController {
 
     @GetMapping
     public String get() {
-        return "Hello foole";
+        return "Hello World";
     }
 
     @PostMapping
